@@ -9,9 +9,9 @@ print(cmdline)
 
 def check_host(host: str):
     print("Checking", host)
-    proc = subprocess.run(["ssh", host, cmdline], capture_output=True)
+    proc = subprocess.run(["ssh", host, cmdline], capture_output=True, encoding="UTF-8")
 
-    print(host, ":", proc.stdout, proc.stderr)
+    print(host, ":", proc.stdout) #, proc.stderr)
 
 hosts = ["hyperion", "hyperion3", "turing1", "turing2", "turing3", "turing4", "hyperturing1", "hyperturing2"]
 
